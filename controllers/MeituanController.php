@@ -98,8 +98,7 @@ class MeituanController extends Controller
         $this->downCsv($dealdata,$pages);
         sleep(1);
         ++$pages;
-        $this->redirect('http://yii2.test/index.php?page='.$pages.'&r=meituan/index');
-        return;
+        return \Yii::$app->response->redirect('/index.php?page='.$pages.'&r=meituan/index', 301)->send();
     }
 
     /**
